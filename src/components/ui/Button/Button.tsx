@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container } from './Button.styled';
-import Arrow from '@/icons/arrow.svg';
 
 export interface ButtonProps {
     title: string

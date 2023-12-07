@@ -5,11 +5,9 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import { BasePageProps } from '@/interfaces';
 import Sandwich from '@/components/common/Sandwich/Sandwich';
-import { ScrollDirectionState, ScrollState, SizesState } from '@/recoil/athom';
+import { ScrollState, SizesState } from '@/recoil/athom';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import useResize from '@/hooks/useResize';
-import OnlyScroll from 'only-scrollbar';
-
 
 
 interface LayoutProps extends BasePageProps {
@@ -23,6 +21,8 @@ const Layout: React.FC<LayoutProps> = ({ children, meta, header, sandwich }) => 
     const [scrollDirection, setScrollDirection] = useState('');
 
     const sizes = useResize();
+
+    console.log(isMobile);
 
     useEffect(() => {
         if (sizes?.w && sizes.h) {

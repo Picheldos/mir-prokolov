@@ -1,15 +1,5 @@
 import { atom } from 'recoil';
 
-const initialStateGalery = {
-    activeGallery: '',
-    activeLink: ''
-}
-
-const initialStateSection = {
-    activeSection: '',
-    activeSectionLink: ''
-}
-
 const initialStateSizes = {
     sizes: { w: 0, h: 0 },
     isMobile: false

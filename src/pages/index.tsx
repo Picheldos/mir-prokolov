@@ -1,24 +1,30 @@
-import { GetStaticProps } from 'next';
+import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import React from 'react';
-import Only from '@/icons/only.svg';
 import Layout from '@/components/common/Layout/Layout';
-import { BasePageProps } from '@/interfaces';
-import ContainerWrapper from "@/components/common/ContainerWrapper/ContainerWrapper";
 import AboutSection from "@/components/sections/AboutSection/AboutSection";
+import MainSlider from '@/components/sections/MainSlider/MainSlider';
+import ServiceSlider from '@/components/sections/ServiceSlider/ServiceSlider';
+import AdvantagesSection from '@/components/sections/AdvantagesSection/AdvantagesSection';
+import ProjectsSection from '@/components/sections/ProjectsSection/ProjectsSection';
+import EquipmentSlider from '@/components/sections/EquipmentSlider/EquipmentSlider';
+import ContactsSection from '@/components/sections/ContactsSection/ContactsSection';
 
-interface IndexProps extends BasePageProps {
-    /* Page props*/
-}
+const Index: React.FC = ({ meta, header }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
-const Index: React.FC<IndexProps> = (props) => {
     return (
-        <Layout meta={props.meta} header={props.header} sandwich={props.sandwich}>
+        <Layout meta={meta} header={header} >
+            <MainSlider />
             <AboutSection />
+            <ServiceSlider />
+            <AdvantagesSection />
+            <ProjectsSection />
+            <EquipmentSlider />
+            <ContactsSection />
         </Layout>
     );
 };
 
-export const getStaticProps: GetStaticProps<IndexProps> = async () => {
+export const getStaticProps: GetStaticProps = async () => {
     return {
         props: {
             meta: {

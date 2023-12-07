@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import variables from './variables';
-import { color } from './mixins';
+import { color, mediaBreakpointDown, vw } from './mixins';
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -8,9 +8,21 @@ const GlobalStyle = createGlobalStyle`
     }
 
     ::-webkit-scrollbar {
-        width: 0;
-        background: transparent;
+            width: 6px;
+            background-color: rgba(222, 222, 222, 0.75);
     }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+        background-color: rgba(222, 222, 222, 0.75);
+    }
+
 
     html {
         font-family: ${variables.fonts.default};
@@ -23,6 +35,7 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         overscroll-behavior: none;
         overflow: auto;
+        
     }
 
     h1, h2, h3, h4, h5, span, a {
@@ -38,6 +51,36 @@ const GlobalStyle = createGlobalStyle`
         text-decoration: none;
         color: inherit;
         outline: none;
+    }
+    
+    ul {
+      margin: 0;
+      padding-inline-start: ${vw(24)};
+      list-style-type: none;
+      li {
+          position: relative;
+          &:before {
+            position: absolute;
+            top: 9px;
+            left: ${vw(-20)};
+            content: "";
+            display: inline-block;
+            height: ${vw(10)};
+            width: ${vw(10)};
+            vertical-align: middle;
+            border-radius: 50%;
+            background-color: ${color('orange')};
+            margin-right: 10px;
+            
+            ${mediaBreakpointDown('md')} {
+                width: 7px;
+                height: 7px;
+                top: 12px;
+                left: ${vw(-12, 'xs')};
+            }
+          }
+          
+        }
     }
 
     button {

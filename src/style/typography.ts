@@ -1,4 +1,5 @@
 import { css, FlattenSimpleInterpolation } from 'styled-components';
+import variables from '@/style/variables';
 
 export const rem: (size: number, rootFontSize?: number) => string = (size, rootFontSize = 16) => {
     return `${size / rootFontSize}rem`;
@@ -93,27 +94,53 @@ export const remAdaptiveFont = (minSize: number, tabletSize: number, smallDeskSi
 
 const typography = {
     title: css`
-        ${remAdaptiveFont(32, 40, 48, 64)};
+        ${remAdaptiveFont(28, 40, 48, 64)};
         line-height: 1.2;
         font-weight: 700;
     `,
     title2: css`
-        ${remAdaptiveFont(24, 32, 40, 48)};
+        ${remAdaptiveFont(28, 36, 40, 48)};
         line-height: 1;
         font-weight: 700;
     `,
+    title3: css`
+        ${remAdaptiveFont(20, 22, 32, 36)};
+        line-height: 1.2;
+        font-weight: 700;
+    `,
     bigText: css`
-        ${remAdaptiveFont(24, 32, 40, 48)};
-        line-height: 1;
+        ${remAdaptiveFont(22, 28, 42, 48)};
+        line-height: 1.2;
         font-weight: 400;
-        letter-spacing: 0.96px;
+        letter-spacing: 1px;
     `,
     text: css`
-        ${remAdaptiveFont(20, 24, 32, 32)};
+        ${remAdaptiveFont(14, 22, 26, 32)};  
         line-height: 1.4;
         font-weight: 400;
         letter-spacing: 0.64px;
         text-align: justify;
+    `,
+    text2: css`
+        ${remAdaptiveFont(12, 16, 20, 24)};  
+        line-height: 1.2;
+        font-weight: 400;
+    `,
+    text5: css`
+        ${remAdaptiveFont(20, 20, 24, 24)};  
+        line-height: 1.2;
+        font-weight: 600;
+    `,
+    link: css`
+        ${remAdaptiveFont(12, 14, 18, 20)};
+        line-height: 1.2;
+        font-weight: 400;
+    `,
+    logo: css`
+        ${remAdaptiveFont(18, 20, 24, 24)};
+        line-height: 1;
+        font-weight: 600;
+        font-family: ${variables.fonts.rubik};
     `,
 };
 

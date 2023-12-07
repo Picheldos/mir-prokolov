@@ -7,7 +7,8 @@ const variables = {
     },
     videoRatio: (9 / 16) * 100,
     fonts: {
-        default: 'Montserrat, Arial'
+        default: 'Montserrat, Arial',
+        rubik: 'Rubik, sans-serif'
     }
 };
 

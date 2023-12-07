@@ -1,5 +1,7 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import OnlyScroll from 'only-scrollbar';
+import { useSetRecoilState } from 'recoil';
+import { ScrollDirectionState, ScrollState } from '@/recoil/athom';
 
 type ScrollBarContextType = OnlyScroll | null;
 
@@ -16,8 +18,12 @@ const ScrollBarProvider: React.FC = ({ children }) => {
             history.scrollRestoration = 'manual';
         }
 
+
+
         return () => scrollBar?.destroy();
     }, []);
+
+
 
     return <ScrollBarContext.Provider value={scrollBar}>{children}</ScrollBarContext.Provider>;
 };

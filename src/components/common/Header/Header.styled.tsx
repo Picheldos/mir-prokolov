@@ -19,7 +19,7 @@ export const Container = styled.header<{visible: boolean; contrast: boolean}>`
         background: ${color('orange')};
         color: ${color('white')};
         span {
-            background: ${color('black')};
+            background: ${color('black')}!important;
         }
       ` : `
         background: ${color('white')};

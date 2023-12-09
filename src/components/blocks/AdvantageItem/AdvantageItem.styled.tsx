@@ -19,6 +19,14 @@ export const Container = styled.div<{inView: boolean}>`
   
   &:not(:last-child) {
       margin-bottom: ${vw(192)};
+      
+      ${mediaBreakpointDown('lg')} {
+        margin-bottom: ${vw(100, 'md')};
+      }
+      
+      ${mediaBreakpointDown('md')} {
+        margin-bottom: ${vw(70, 'xs')};
+      }
   }
   
   ${mediaBreakpointDown('fhd')} {

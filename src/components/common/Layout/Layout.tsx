@@ -8,6 +8,8 @@ import Sandwich from '@/components/common/Sandwich/Sandwich';
 import { ScrollState, SizesState } from '@/recoil/athom';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import useResize from '@/hooks/useResize';
+import MobileMenuButton from '@/components/ui/MobileMenuButton/MobileMenuButton';
+import MobileMenu from '@/components/common/MobileMenu/MobileMenu';
 
 
 interface LayoutProps extends BasePageProps {
@@ -21,8 +23,6 @@ const Layout: React.FC<LayoutProps> = ({ children, meta, header, sandwich }) => 
     const [scrollDirection, setScrollDirection] = useState('');
 
     const sizes = useResize();
-
-    console.log(isMobile);
 
     useEffect(() => {
         if (sizes?.w && sizes.h) {
@@ -57,7 +57,10 @@ const Layout: React.FC<LayoutProps> = ({ children, meta, header, sandwich }) => 
                 <meta name="og:description" content={meta.description} />
             </Head>
 
-            <Header {...header} scrollDirection={scrollDirection}/>
+            {!isMobile ? <Header {...header} scrollDirection={scrollDirection}/> :
+                <MobileMenuButton />
+            }
+            <MobileMenu />
 
             <Sandwich {...sandwich} />
 

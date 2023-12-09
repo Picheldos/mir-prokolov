@@ -18,6 +18,4 @@ export const AdvantagesSectionItem = styled.div`
 export const AdvantagesSectionItemTop = styled.div`
    display: flex;
    flex-direction: row;
-   
-   
 `;

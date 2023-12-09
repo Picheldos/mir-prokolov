@@ -19,7 +19,7 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
 
     return (
         <ContainerWrapper title={'О нас'}>
-            <Container>
+            <Container id={'about'}>
                 <AboutSectionTitle dangerouslySetInnerHTML={{__html: data.title}} />
                 <AboutSectionText>
                     {data.text.map((item) => <AdvantageItem text={item} key={item} />)}

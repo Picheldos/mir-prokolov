@@ -3,6 +3,7 @@ import { Container, HeaderLink, HeaderLinks, HeaderLogo } from './Header.styled'
 import Logo from '@/components/blocks/Logo/Logo';
 import { useRecoilValue } from 'recoil';
 import { ScrollState } from '@/recoil/athom';
+import { Link } from 'react-scroll';
 
 
 export interface HeaderProps {
@@ -10,7 +11,32 @@ export interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({scrollDirection}) => {
-    const links = ['Преимущества', 'Услуги', 'Работы', 'Техника', 'Контакты']
+    const links = [
+        {
+          title: 'О нас',
+          link: 'about'
+        },
+        {
+            title: 'Преимущества',
+            link: 'advantages'
+        },
+        {
+            title: 'Услуги',
+            link: 'service'
+        },
+        {
+            title: 'Работы',
+            link: 'projects'
+        },
+        {
+            title: 'Техника',
+            link: 'equipment'
+        },
+        {
+            title: 'Контакты',
+            link: 'contacts'
+        }
+    ]
     const [visible, setVisible] = useState(true);
     const [contrast, setContrast] = useState(false);
 
@@ -34,7 +60,11 @@ const Header: React.FC<HeaderProps> = ({scrollDirection}) => {
                 <Logo />
             </HeaderLogo>
             <HeaderLinks>
-                {links.map((link) => <HeaderLink key={link} dangerouslySetInnerHTML={{__html: link}} />)}
+                {links.map((link) =>
+                    <Link to={link.link} key={link.title} smooth={true} offset={-200} duration={800} >
+                        <HeaderLink dangerouslySetInnerHTML={{__html: link.title}} />
+                    </Link>
+                )}
             </HeaderLinks>
         </Container>
     );

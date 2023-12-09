@@ -14,6 +14,8 @@ const initialContainerScrollProgress = {
     progress: 0
 }
 
+const initialMenuState = false;
+
 export const SizesState = atom({
     key: 'SizesState',
     default: initialStateSizes
@@ -33,4 +35,9 @@ export const ContainerScrollProgressState = atom({
     key: 'ContainerScrollProgressState',
     default: initialContainerScrollProgress
 })
+
+export const MenuState = atom({
+    key: 'MenuState',
+    default: initialMenuState
+});
 

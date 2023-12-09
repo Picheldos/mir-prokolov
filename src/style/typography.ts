@@ -137,7 +137,7 @@ const typography = {
         font-weight: 400;
     `,
     logo: css`
-        ${remAdaptiveFont(18, 20, 24, 24)};
+        ${remAdaptiveFont(24, 24, 24, 24)};
         line-height: 1;
         font-weight: 600;
         font-family: ${variables.fonts.rubik};

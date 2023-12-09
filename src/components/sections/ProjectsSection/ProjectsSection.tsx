@@ -44,7 +44,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
 
     return (
         <ContainerWrapper title={'Работы'} grayBg>
-            <Container ref={ref}>
+            <Container ref={ref} id={'projects'}>
                 {data.map((img, index) =>
                     <ProjectCard key={index+img} img={img} scrollPos={scrollPos} />
                 )}

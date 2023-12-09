@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, font, mediaBreakpointDown, vw } from '@/style/mixins';
+import { color, font, mediaBreakpointDown, mediaBreakpointUp, vw } from '@/style/mixins';
 
 export const Container = styled.div`
   margin-top: ${vw(96)};
@@ -16,10 +16,10 @@ export const ServiceSliderSlide = styled.div`
   position: relative;
   
   transition: transform 0.5s ease-in-out;
-  transform: scale(0.67);
   
-  width: ${vw(983)};
-  height: ${vw(576)};
+  transform: scale(0.55);
+  width: 100%;
+  height: ${vw(250, 'xs')};
   
   padding: ${vw(60)} ${vw(48)};
   
@@ -31,18 +31,18 @@ export const ServiceSliderSlide = styled.div`
     border-radius: 20px;
   }
   
-  ${mediaBreakpointDown('lg')} {
+  
+  ${mediaBreakpointUp(('md'))} {
     width: ${vw(430, 'md')};
     height: ${vw(250, 'md')};
-    transform: scale(0.55);
   }
   
-  ${mediaBreakpointDown(('md'))} {
-    width: 100%;
-    height: ${vw(200, 'xs')};
+  ${mediaBreakpointUp('lg')} {  
+    width: ${vw(983)};
+    height: ${vw(576)};
+    transform: scale(0.67);
+    
   }
-  
-  
 `;
 
 export const ServiceSliderSlideText = styled.div`

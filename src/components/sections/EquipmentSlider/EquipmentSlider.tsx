@@ -58,7 +58,7 @@ const EquipmentSlider: React.FC<EquipmentSliderProps> = ({  }) => {
 
     return (
         <ContainerWrapper title={'Техника'}>
-            <Container>
+            <Container id={'equipment'}>
                 <ArrowButton onClick={btnNextClick} />
                 <Swiper onSwiper={setSwiperInst} {...COMMON_SWIPER_OPTIONS}>
                     {data.map((slide) =>

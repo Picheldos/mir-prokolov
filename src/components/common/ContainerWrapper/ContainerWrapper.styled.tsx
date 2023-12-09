@@ -21,7 +21,7 @@ export const Container = styled.section<{swiper: boolean; grayBg?: boolean}>`
     padding: ${vw(96)};
   }
   
-  ${mediaBreakpointUp('xl')} {
+  ${mediaBreakpointUp('lg')} {
     flex-direction: ${({swiper}) => swiper ? `column` :  `row`};
   }
 `;
@@ -29,9 +29,10 @@ export const Container = styled.section<{swiper: boolean; grayBg?: boolean}>`
 export const ContainerWrapperTop = styled.div`
   display: flex;
   flex-direction: row;
+  margin-bottom: ${vw(40, 'xs')};
   
-  ${mediaBreakpointDown('lg')} {
-    margin-bottom: ${vw(40, 'md')};
+  ${mediaBreakpointDown('md')} {
+    margin-bottom: ${vw(60, 'md')};
   }
   
 `;
@@ -49,9 +50,12 @@ export const ContainerWrapperTopBtns = styled.div`
 `;
 
 export const ContainerWrapperTopTitle = styled.div`
-  min-width: ${vw(408)};
   ${font('title2')};
-  margin-right: ${vw(264)};
+  
+  ${mediaBreakpointUp('lg')} {
+    min-width: ${vw(408)};
+    margin-right: ${vw(264)};
+  }
 `;
 
 export const ContainerWrapperSection = styled.div`

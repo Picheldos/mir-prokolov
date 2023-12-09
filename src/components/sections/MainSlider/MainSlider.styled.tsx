@@ -1,21 +1,24 @@
 import styled from 'styled-components';
-import { color, font, mediaBreakpointDown, vw } from '@/style/mixins';
+import { color, font, mediaBreakpointUp, vw } from '@/style/mixins';
 
 export const Container = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  
   width: 100%;
-  height: ${vw(570)};
-  padding: ${vw(96)};
+  height: ${vw(300, 'xs')};
+  padding: ${vw(32, 'xs')} ${vw(18, 'xs')};
+  
   position: relative;
   
-  ${mediaBreakpointDown('lg')} {
+  ${mediaBreakpointUp('md')} {
     height: ${vw(500, 'md')};
+    padding: ${vw(96)};
   }
   
-  ${mediaBreakpointDown('md')} {
-    height: ${vw(300, 'xs')};
-    flex-direction: column;
+  ${mediaBreakpointUp('lg')} {
+    height: ${vw(570)};
+    flex-direction: row;
   }
 `;
 
@@ -30,12 +33,12 @@ export const MainSliderImage = styled.div`
 
 export const MainSliderTitle = styled.div`
   ${font('title')};
-  width: ${vw(700)};
+  width: 100%;
   color: ${color('white')};
   text-shadow: 0 4px 8px #00000040;
   
-  ${mediaBreakpointDown('xl')} {
-    width: 100%;
+  ${mediaBreakpointUp('lg')} {
+    width: ${vw(700)};
   }
 
 `;
@@ -46,7 +49,7 @@ export const MainSliderButtons = styled.div`
   margin-top: auto;
   margin-left: auto;
   
-  & > div:not(:first-of-type) {
+  & > a:not(:first-of-type) {
     margin-left: ${vw(24)};
   }
 `;

@@ -15,7 +15,7 @@ const ContactsSection: React.FC<ContactsSectionProps> = ({  }) => {
 
 
     return (
-        <Container>
+        <Container id={'contacts'}>
             <ContactsSectionTitle>
                 Контакты
             </ContactsSectionTitle>

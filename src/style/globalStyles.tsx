@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import variables from './variables';
-import { color, mediaBreakpointDown, vw } from './mixins';
+import { color, mediaBreakpointUp, vw } from './mixins';
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -55,28 +55,46 @@ const GlobalStyle = createGlobalStyle`
     
     ul {
       margin: 0;
-      padding-inline-start: ${vw(24)};
+      padding-inline-start: ${vw(12, 'xs')};
       list-style-type: none;
+      
+      ${mediaBreakpointUp('md')} {
+        padding-inline-start: ${vw(15, 'md')};
+      }
+  
+      ${mediaBreakpointUp('lg')} {
+        padding-inline-start: ${vw(24)};
+      }
+      
       li {
           position: relative;
           &:before {
             position: absolute;
-            top: 9px;
-            left: ${vw(-20)};
+            
+            width: 7px;
+            height: 7px;
+            top: 5px;
+            left: ${vw(-12, 'xs')};
+            
             content: "";
             display: inline-block;
-            height: ${vw(10)};
-            width: ${vw(10)};
             vertical-align: middle;
             border-radius: 50%;
             background-color: ${color('orange')};
             margin-right: 10px;
             
-            ${mediaBreakpointDown('md')} {
-                width: 7px;
-                height: 7px;
-                top: 12px;
-                left: ${vw(-12, 'xs')};
+            ${mediaBreakpointUp('md')} {
+              width: ${vw(7, 'md')};
+              height: ${vw(7, 'md')};
+              top: ${vw(7, 'md')};
+              left: ${vw(-12, 'md')};
+            }
+  
+            ${mediaBreakpointUp('lg')} {
+              height: ${vw(10)};
+              width: ${vw(10)};
+              top: 9px;
+              left: ${vw(-20)};
             }
           }
           

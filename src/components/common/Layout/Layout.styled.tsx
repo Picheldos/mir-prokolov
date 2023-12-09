@@ -6,6 +6,6 @@ export const Container = styled.main`
     padding-top: ${vw(96)};
     
     ${mediaBreakpointDown('md')} {
-      padding-top: ${vw(35, 'xs')};
+      padding-top: 0;
     }
 `;

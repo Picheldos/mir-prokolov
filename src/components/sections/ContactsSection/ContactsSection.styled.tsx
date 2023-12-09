@@ -1,49 +1,70 @@
 import styled from 'styled-components';
-import { color, font, mediaBreakpointDown, vw } from '@/style/mixins';
+import { color, font, mediaBreakpointUp, vw } from '@/style/mixins';
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   
   height: 100vh;
-  padding: 0 ${vw(96)};
+  
   
   background: ${color('orange')};
-  color: ${color('white')}
+  color: ${color('white')};
+  
+  padding: ${vw(32, 'xs')} ${vw(18, 'xs')};
+  
+  ${mediaBreakpointUp('md')} {
+    padding: ${vw(96)};
+  }
+  
+  ${mediaBreakpointUp('lg')} {
+    padding: ${vw(264)} ${vw(96)};
+  }
 `;
 
 export const ContactsSectionTitle = styled.div`
-  margin-top: ${vw(264)};
-  margin-bottom: ${vw(72)};
+  margin-bottom: ${vw(48, 'xs')};
   ${font('title')};
+  
+  ${mediaBreakpointUp('md')} {
+    margin-bottom: ${vw(72, 'md')};
+  }
+  
+  ${mediaBreakpointUp('lg')} {
+    margin-bottom: ${vw(72)};
+  }
 `;
 
 export const ContactsSectionInfo = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   
+  height: 100%;
   justify-content: space-between;
   
-  ${mediaBreakpointDown('md')} {
-    flex-direction: column;
-    height: 100%;
+  ${mediaBreakpointUp('lg')} {
+    flex-direction: row;
   }
 `;
 
 export const ContactsSectionInfoLeft = styled.div`
-  width: ${vw(768)};
+  width: 100%;
   display: flex;
   flex-direction: column;
   
   ${font('text')};
   
   
-  ${mediaBreakpointDown('md')} {
-    width: 100%;
+  ${mediaBreakpointUp('lg')} {
+    width: ${vw(768)};
   }
   
   div, a {
-    margin-bottom: ${vw(20)};
+    margin-bottom: 10px;
+    
+    ${mediaBreakpointUp('lg')} {
+      margin-bottom: ${vw(20)};
+    }
   }
   
   a {
@@ -57,16 +78,15 @@ export const ContactsSectionInfoLeft = styled.div`
 `;
 
 export const ContactsSectionInfoRight = styled.div`
-  width: ${vw(768)};
+  width: 100%;
   display: flex;
   flex-direction: column;
   
   ${font('text2')};
   font-weight: 300;
   
-   ${mediaBreakpointDown('md')} {
-    width: 100%;
-    margin-top: auto;
+  ${mediaBreakpointUp('lg')} {
+    width: ${vw(768)};
   }
   
   div {

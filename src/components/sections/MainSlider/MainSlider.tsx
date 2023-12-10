@@ -17,7 +17,7 @@ const MainSlider: React.FC<MainSliderProps> = () => {
     return (
         <Container>
             <MainSliderImage>
-                <Image src={isMobile ? '/images/bg-m.jpg' : '/images/bg.jpg'} layout={'fill'} objectFit={'cover'} />
+                <Image src={'/images/main-slider/vermeer.png'} layout={'fill'} objectFit={'cover'} />
             </MainSliderImage>
             <MainSliderTitle>
                 Прокол грунта <br /> в Санкт-Петербурге

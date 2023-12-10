@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color } from '@/style/mixins';
+import { color, mediaBreakpointUp } from '@/style/mixins';
 
 export const Container = styled.div<{hidden: boolean}>`
     display: flex;
@@ -39,6 +39,9 @@ export const Container = styled.div<{hidden: boolean}>`
       
       ${({hidden}) => !hidden && `
          transform: scale(5);
+         ${mediaBreakpointUp('lg')} {
+            transform: scale(15);
+         }
       `}
     }
 `;

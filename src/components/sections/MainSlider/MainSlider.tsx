@@ -3,16 +3,12 @@ import { Container, MainSliderButtons, MainSliderImage, MainSliderTitle } from '
 import Image from 'next/image';
 import Button from '@/components/ui/Button/Button';
 import { Link } from 'react-scroll';
-import { useRecoilValue } from 'recoil';
-import { SizesState } from '@/recoil/athom';
 
 export interface MainSliderProps {
     // text: string;
 }
 
 const MainSlider: React.FC<MainSliderProps> = () => {
-
-    const {isMobile} = useRecoilValue(SizesState);
 
     return (
         <Container>

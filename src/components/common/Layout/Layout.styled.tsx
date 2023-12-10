@@ -5,7 +5,7 @@ export const Container = styled.main`
     position: relative;
     padding-top: ${vw(96)};
     
-    ${mediaBreakpointDown('md')} {
+    ${mediaBreakpointDown('lg')} {
       padding-top: 0;
     }
 `;

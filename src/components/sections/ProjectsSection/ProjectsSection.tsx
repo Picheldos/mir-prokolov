@@ -7,6 +7,7 @@ import {
 
 import ProjectCard from '@/components/blocks/ProjectCard/ProjectCard';
 import OnlyScroll from 'only-scrollbar';
+import { useScrollBar } from '@/context/ScrollBarContext';
 
 export interface ProjectsSectionProps {
     // text: string;
@@ -24,6 +25,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
 
     const [scrollPos, setScrollPos] = useState(0);
     const [scrollBar, setScrollBar] = useState<ScrollBarContextType>(null);
+    const globalScroll = useScrollBar();
 
     const ref = useRef() as MutableRefObject<HTMLDivElement>;
 
@@ -33,13 +35,31 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
     }, []);
 
     useEffect(() => {
-        const scrollHandler = () => setScrollPos(ref.current.scrollTop);
+        const scrollHandler = () => {
+            setScrollPos(ref.current.scrollTop);
+        };
         ref.current.addEventListener('scroll', scrollHandler);
 
         return () => {
             ref.current.removeEventListener('scroll', scrollHandler)
         }
-    }, [setScrollPos]);
+    }, [setScrollPos, ref.current]);
+
+    useEffect(() => {
+        const wheelHandler = (e: WheelEvent) => {
+            const velocity = scrollBar?.velocity;
+            const scrollDirection = ref.current.dataset.scrollDirection;
+
+            if ((velocity === 0 && scrollDirection === 'down') || (velocity === -0 && scrollDirection === 'up')) {
+                globalScroll?.scrollTo(document.children[0].scrollTop + e.deltaY)
+            }
+        };
+        ref.current.addEventListener('wheel', wheelHandler);
+
+        return () => {
+            ref.current.removeEventListener('wheel', wheelHandler)
+        }
+    }, [scrollBar, ref.current, globalScroll]);
 
 
     return (

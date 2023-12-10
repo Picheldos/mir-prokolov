@@ -12,7 +12,7 @@ export const DivideLineOrange = styled.div<{width: number}>`
   width: ${({ width }) => `calc(100% - ${width}%)`};
   height: ${vw(12)};
   background: ${color('orange')};
-  
+    
   ${mediaBreakpointDown('md')} {
     height: ${vw(6, 'xs')};
   }
@@ -22,7 +22,7 @@ export const DivideLineGray = styled.div<{width: number}>`
   width: ${({ width }) => `calc(100% - ${width}%)`};
   height: ${vw(12)};
   background: ${color('gray')};
-  
+    
   ${mediaBreakpointDown('md')} {
     height: ${vw(6, 'xs')};
   }

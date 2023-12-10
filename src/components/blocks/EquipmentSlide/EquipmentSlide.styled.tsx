@@ -29,7 +29,7 @@ export const EquipmentSlideImage = styled.div`
 `;
 
 export const EquipmentSlideTitle = styled.div`
-  ${font('title2')};
+  ${font('title3')};
   
   margin-bottom: ${vw(12, 'xs')};
   

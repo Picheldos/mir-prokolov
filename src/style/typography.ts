@@ -109,7 +109,7 @@ const typography = {
         font-weight: 700;
     `,
     bigText: css`
-        ${remAdaptiveFont(22, 28, 42, 48)};
+        ${remAdaptiveFont(20, 28, 35, 46)};
         line-height: 1.2;
         font-weight: 400;
         letter-spacing: 1px;

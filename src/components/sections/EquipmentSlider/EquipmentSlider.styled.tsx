@@ -12,7 +12,7 @@ export const Container = styled.div`
   ${Arrow} {
     position: absolute;
     right: ${vw(12, 'xs')};
-    top: ${vw(80, 'xs')};
+    top: ${vw(75, 'xs')};
     z-index: 3;
     
     background-color: ${color('white')};

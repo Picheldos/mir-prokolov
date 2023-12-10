@@ -3,6 +3,8 @@ import { Container, MainSliderButtons, MainSliderImage, MainSliderTitle } from '
 import Image from 'next/image';
 import Button from '@/components/ui/Button/Button';
 import { Link } from 'react-scroll';
+import { useRecoilValue } from 'recoil';
+import { SizesState } from '@/recoil/athom';
 
 export interface MainSliderProps {
     // text: string;
@@ -10,10 +12,12 @@ export interface MainSliderProps {
 
 const MainSlider: React.FC<MainSliderProps> = () => {
 
+    const {isMobile} = useRecoilValue(SizesState);
+
     return (
         <Container>
             <MainSliderImage>
-                <Image src={'/images/main.jpg'} layout={'fill'} objectFit={'cover'} />
+                <Image src={isMobile ? '/images/bg-m.jpg' : '/images/bg.jpg'} layout={'fill'} objectFit={'cover'} />
             </MainSliderImage>
             <MainSliderTitle>
                 Прокол грунта <br /> в Санкт-Петербурге

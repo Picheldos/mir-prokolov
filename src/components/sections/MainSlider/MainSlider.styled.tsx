@@ -6,13 +6,13 @@ export const Container = styled.div`
   flex-direction: column;
   
   width: 100%;
-  height: ${vw(300, 'xs')};
+  height: ${vw(450, 'xs')};
   padding: ${vw(32, 'xs')} ${vw(18, 'xs')};
   
   position: relative;
   
   ${mediaBreakpointUp('md')} {
-    height: ${vw(500, 'md')};
+    height: ${vw(780, 'md')};
     padding: ${vw(96)};
   }
   

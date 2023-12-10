@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   
-  div:nth-child(2n) {
+  & > div:nth-child(2n) {
     margin-left: auto;
   }
   

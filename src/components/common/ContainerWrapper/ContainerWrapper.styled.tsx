@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { color, font, mediaBreakpointDown, mediaBreakpointUp, vw } from '@/style/mixins';
+import { color, font, mediaBreakpointUp, vw } from '@/style/mixins';
 
 export const Container = styled.section<{swiper: boolean; grayBg?: boolean}>`
   display: flex;
@@ -31,8 +31,12 @@ export const ContainerWrapperTop = styled.div`
   flex-direction: row;
   margin-bottom: ${vw(40, 'xs')};
   
-  ${mediaBreakpointDown('md')} {
+  ${mediaBreakpointUp('md')} {
     margin-bottom: ${vw(60, 'md')};
+  }
+  
+  ${mediaBreakpointUp('lg')} {
+    margin-bottom: 0;
   }
   
 `;

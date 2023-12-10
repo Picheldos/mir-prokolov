@@ -32,7 +32,7 @@ const AdvantagesSection: React.FC<AdvantagesSectionProps> = ({  }) => {
         },
         {
             icon: 'compact',
-            title: 'Сварка ПНД труб (стык/муфта)',
+            title: 'Сварка ПНД труб',
             text: 'В штате компании имеются аттестованные сварщики НАКС. Сварщики работают на высоком уровне.'
         },
         {

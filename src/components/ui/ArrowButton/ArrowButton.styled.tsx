@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import { color, mediaBreakpointDown, vw } from '@/style/mixins';
+import { color, mediaBreakpointUp, vw } from '@/style/mixins';
 
 export const Container = styled.div`
   display: flex;
   
-  width: ${vw(48)};
-  height: ${vw(48)};
+  width: ${vw(38, 'xs')};
+  height: ${vw(38, 'xs')};
   border-radius: 50%;
   
   background-color: ${color('white')};
@@ -20,21 +20,31 @@ export const Container = styled.div`
     }
   }
   
-  ${mediaBreakpointDown('lg')} {
+  ${mediaBreakpointUp('md')} {
       width: ${vw(48, 'md')};
       height: ${vw(48, 'md')};
+  }
+  
+  ${mediaBreakpointUp('lg')} {
+      width: ${vw(48)};
+      height: ${vw(48)};
   }
   
   svg {
     margin: auto;
     stroke-width: 3px;
-    width: ${vw(10)};
-    height: ${vw(22)};
+    width: ${vw(8, 'xs')};
+    height: ${vw(18,'xs')};
     
-    ${mediaBreakpointDown('lg')} {
+    ${mediaBreakpointUp('md')} {
       width: ${vw(10, 'md')};
       height: ${vw(22, 'md')};
-  }
+    }
+    
+    ${mediaBreakpointUp('md')} {
+      width: ${vw(10)};
+      height: ${vw(22)};
+    }
     
     path {
       stroke: ${color('orange')};

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, font, mediaBreakpointDown, vw } from '@/style/mixins';
+import { color, font, mediaBreakpointDown, mediaBreakpointUp, vw } from '@/style/mixins';
 
 export const Container = styled.header<{visible: boolean; contrast: boolean}>`
   
@@ -12,7 +12,7 @@ export const Container = styled.header<{visible: boolean; contrast: boolean}>`
     align-items: center;
     padding: ${vw(24)} ${vw(48)};
     
-    transform: ${({visible, contrast}) => visible || contrast ? 'translateY(0)' : 'translateY(-100px)'};
+    transform: ${({visible, contrast}) => visible || contrast ? 'translateY(0)' : `translateY(-${vw(100)})`};
     transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;    
     
      ${({contrast}) => contrast ? `
@@ -51,9 +51,13 @@ export const HeaderLogo = styled.div`
 export const HeaderLinks = styled.div`
   display: flex;
   flex-direction: row;
-  margin-left: ${vw(512)};
-  ${mediaBreakpointDown('md')} {
-    margin-left: 0;
+  margin-left: ${vw(190,'xl')};
+  ${mediaBreakpointUp('xl')} {
+     margin-left: ${vw(290,'xxl')};
+  }
+  
+  ${mediaBreakpointUp('xxl')} {
+    margin-left: ${vw(460)};
   }
 `;
 

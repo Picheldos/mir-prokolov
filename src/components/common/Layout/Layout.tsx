@@ -49,7 +49,7 @@ const Layout: React.FC<LayoutProps> = ({ children, meta, header, sandwich }) => 
     return (
         <>
             <Head>
-                <title>{'Мир проколов'}</title>
+                <title>{meta.title}</title>
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 <meta name="description" content={meta.description} />

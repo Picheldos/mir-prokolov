@@ -10,6 +10,7 @@ import { useRecoilState, useSetRecoilState } from 'recoil';
 import useResize from '@/hooks/useResize';
 import MobileMenuButton from '@/components/ui/MobileMenuButton/MobileMenuButton';
 import MobileMenu from '@/components/common/MobileMenu/MobileMenu';
+import Preloader from '@/components/common/Preloader/Preloader';
 
 
 interface LayoutProps extends BasePageProps {
@@ -61,7 +62,7 @@ const Layout: React.FC<LayoutProps> = ({ children, meta, header, sandwich }) => 
                 <MobileMenuButton />
             }
             <MobileMenu />
-
+            <Preloader />
             <Sandwich {...sandwich} />
 
             <Container>

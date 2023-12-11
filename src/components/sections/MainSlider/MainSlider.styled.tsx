@@ -4,7 +4,6 @@ import { color, font, mediaBreakpointUp, vw } from '@/style/mixins';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  z-index: -2;
   width: 100%;
   height: ${vw(450, 'xs')};
   padding: ${vw(32, 'xs')} ${vw(18, 'xs')};
@@ -21,12 +20,12 @@ export const Container = styled.div`
   ${mediaBreakpointUp('lg')} {
     height: ${vw(570)};
     flex-direction: row;
+
   }
 `;
 
 export const MainSliderImage = styled.div`
   position: absolute;
-  z-index: -1;
   top: ${vw(150, 'xs')};
   left: ${vw(18, 'xs')};
   
@@ -72,7 +71,7 @@ export const MainSliderButtons = styled.div`
   flex-direction: row;
   margin-top: auto;
   margin-left: auto;
-  
+  z-index: 2;
   & > a:not(:first-of-type) {
     margin-left: ${vw(24)};
   }
